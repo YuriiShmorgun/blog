@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.tusher.blog</groupId>
+    <artifactId>blog</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+
+        <!-- JDK 8 version -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <!-- JDK 8 plugin -->
+        <JDK.plugin.configuration>1.8</JDK.plugin.configuration>
+        <JDK.plugin.version>3.8.0</JDK.plugin.version>
+
+        <!-- Spark version -->
+        <spark-core.version>2.3</spark-core.version>
+        <spark-sql.version>2.3.0</spark-sql.version>
+
+        <!-- Mongodb version -->
+        <mongodb.version>1.2.0</mongodb.version>
+
+        <!-- Json -->
+        <json.version>2.6.2</json.version>
+
+        <!-- Lombok -->
+        <lombok.version>1.18.2</lombok.version>
+
+    </properties>
+
+    <dependencies>
+
+        <!-- Spark -->
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-core</artifactId>
+            <version>${spark-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.11</artifactId>
+            <version>${spark-sql.version}</version>
+        </dependency>
+
+        <!-- Mongodb -->
+        <dependency>
+            <groupId>org.mongodb.morphia</groupId>
+            <artifactId>morphia</artifactId>
+            <version>${mongodb.version}</version>
+        </dependency>
+
+        <!-- Json -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${json.version}</version>
+        </dependency>
+
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+
+                <!-- JDK 8 plugin version -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${JDK.plugin.version}</version>
+                <configuration>
+                    <source>${JDK.plugin.configuration}</source>
+                    <target>${JDK.plugin.configuration}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
